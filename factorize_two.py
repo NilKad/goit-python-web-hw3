@@ -13,10 +13,8 @@ def count_factorize(num):
 def factorize(*number):
     start_time = time.time()
 
-    # with Pool(cpu_count()) as pool:
     with Pool(cpu_count()) as pool:
         res = pool.map_async(count_factorize, number)
-
         pool.close()
         pool.join()
 
